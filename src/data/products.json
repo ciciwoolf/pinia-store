@@ -1,22 +1,22 @@
 [
   {
-    "name": "Plain Ol' Pineapple",
-    "image": "pineapple-original.jpg",
-    "price" : 4
+    "name": "Box of 3 Mozart Kugeln",
+    "image": "MozartKuglen1.jpg",
+    "price": 4
   },
   {
-    "name": "Dried Pineapple",
-    "image": "pineapple-dried.jpg",
-    "price": 5
+    "name": "Box of 12 Mozart Kugeln",
+    "image": "MozartKuglenBox.jpg",
+    "price": 15
   },
   {
-    "name": "Pineapple Gum",
-    "image": "pineapple-gum.jpg",
-    "price" : 3
+    "name": "The Original Mozart Kugeln",
+    "image": "blueMozartKugeln.jpg",
+    "price": 289
   },
   {
-    "name": "Pineapple T-Shirt",
-    "image": "pineapple-tshirt.jpg",
-    "price" : 12
+    "name": "Mozart Kugeln Poster",
+    "image": "MozartKuglenPoster.jpg",
+    "price": 12
   }
 ]

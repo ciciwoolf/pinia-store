@@ -1,28 +1,39 @@
-<script setup>
-defineProps({
-  modelValue: { type: [Number, String], default: 0 },
-});
-
-const emit = defineEmits(["update:modelValue", "input"]);
-const updateValue = (value) => emit("update:modelValue", value);
-</script>
 <template>
   <span>
     <button
       class="cursor-pointer bg-gray-200 px-2 rounded-l"
-      @click="updateValue(modelValue > 0 ? modelValue - 1 : null)"
+      @click="decrement"
     >
       -
     </button>
     <input :value="modelValue" type="number" min="0" @input="updateValue" />
     <button
       class="bg-gray-200 px-2 rounded-r cursor-pointer"
-      @click="updateValue(modelValue + 1)"
+      @click="increment"
     >
       +
     </button>
   </span>
 </template>
+
+<script>
+export default {
+  props: {
+    modelValue: { type: [Number, String], default: 0 },
+  },
+  methods: {
+    updateValue(value) {
+      this.$emit("update:modelValue", value);
+    },
+    decrement() {
+      this.updateValue(this.modelValue > 0 ? this.modelValue - 1 : null);
+    },
+    increment() {
+      this.updateValue(this.modelValue + 1);
+    },
+  },
+};
+</script>
 
 <style scoped>
 input[type="number"] {
