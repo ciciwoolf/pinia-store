@@ -1,9 +1,3 @@
-<script setup>
-import TheHeader from "@/components/TheHeader.vue";
-import ProductCard from "@/components/ProductCard.vue";
-import products from "@/data/products.json";
-</script>
-
 <template>
   <div class="container">
     <TheHeader />
@@ -16,3 +10,26 @@ import products from "@/data/products.json";
     </ul>
   </div>
 </template>
+
+<script>
+import TheHeader from "@/components/TheHeader.vue";
+import ProductCard from "@/components/ProductCard.vue";
+import { useProductStore } from "./stores/ProductStore";
+
+export default {
+  components: {
+    TheHeader,
+    ProductCard,
+  },
+  data() {
+    return {
+      productStore: useProductStore(),
+    };
+  },
+  computed: {
+    products() {
+      return this.productStore.products;
+    },
+  },
+};
+</script>
