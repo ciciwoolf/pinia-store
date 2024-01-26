@@ -1,6 +1,6 @@
 <template>
   <li>
-    <span>{{ item.name }}</span>
+    <span>{{ item }}</span>
     <span class="whitespace-nowrap">
       <AppCountInput :model-value="count" @update:modelValue="updateCount" />
       <span class="inline-block w-12 text-right"

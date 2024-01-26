@@ -10,7 +10,9 @@
       <div>
         <ul class="items-in-cart">
           <CartItem
-            :item="{ name: 'Cheese', price: 5 }"
+            v-for="item in items"
+            :key="item.name"
+            :item="item"
             :count="5"
             @updateCount="updateCount"
             @clear="clearItem"
@@ -37,6 +39,7 @@ import { ref } from "vue";
 import AppModalOverlay from "./AppModalOverlay.vue";
 import CartItem from "./CartItem.vue";
 import AppButton from "./AppButton.vue"; // Import your AppButton component
+import { useCartStore } from "../stores/CartStore";
 
 export default {
   components: {
@@ -46,9 +49,15 @@ export default {
   },
   data() {
     return {
+      cartStore: useCartStore(),
       active: ref(false),
     };
   },
+  computed: {
+    items() {
+      return this.cartStore.items;
+    },
+  }, 
   methods: {
     toggleCart() {
       this.active = !this.active;

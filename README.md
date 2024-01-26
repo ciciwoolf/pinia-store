@@ -1,7 +1,9 @@
 ## Lunch n' Nerd Notes
 
-Session 1 (Jan 26, 2024): Pinia, Options api
+Session 1 (Jan 26, 2024): Pinia + Options api
 https://pinia.vuejs.org/
+https://www.vuemastery.com/blog/advantages-of-pinia-vs-vuex/
+
 
 Pinia is modular by nature, so you can import it just like a module, and use it directly in your components.
 
